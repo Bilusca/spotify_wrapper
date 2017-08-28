@@ -1,5 +1,6 @@
-const a = 2;
-function valA() {
-  return a;
-}
-valA();
+export const search = () =>
+  fetch('https://spotify.com');
+export const searchArtists = () => {};
+export const searchAlbums = () => {};
+export const searchTracks = () => {};
+export const searchPlaylists = () => {};

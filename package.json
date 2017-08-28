@@ -5,14 +5,19 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "npm run lint && npm run test:coverage",
+    "prepush": "npm run test:coverage",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
-    "test:coverage": "./node_modules/.bin/nyc ./node_modules/.bin/mocha tests/**/*.spec.js"
+    "test:coverage": "./node_modules/.bin/nyc ./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register"
   },
   "nyc": {
-    "reporter": ["text", "html"],
-    "exclude": ["tests/**"]
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -41,7 +46,11 @@
     "eslint-plugin-import": "^2.7.0",
     "husky": "^0.14.3",
     "mocha": "^3.5.0",
+    "node-fetch": "^1.7.2",
     "nyc": "^11.1.0",
+    "sinon": "^3.2.1",
+    "sinon-chai": "^2.13.0",
+    "sinon-stub-promise": "^4.0.0",
     "webpack": "^3.0.0-rc.2",
     "webpack-dev-server": "^2.7.1"
   },
