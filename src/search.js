@@ -1,5 +1,8 @@
+import { API_URL } from './config';
+import { toJson } from './utils';
+
 export const search = (query, type) =>
-fetch(`https://api.spotify.com/v1/search?q=${query}&type=${type}`, {
+fetch(`${API_URL}/search?q=${query}&type=${type}`, {
   method: 'get',
   headers: {
     'Content-Type': 'application/json',
@@ -7,7 +10,7 @@ fetch(`https://api.spotify.com/v1/search?q=${query}&type=${type}`, {
     'Authorization': 'Bearer BQD3I9sabAfh7Q0PbxgsQmQKK9xem1KkPjwNeMtKD5vKJ4DQ6lla9dsgiCHsIKvSXFos8aDAp-F-ty-kXK5VX0rjLcZxIoZdSRxup_DT3VsYgMEdvCdFClslFsDcNVhwv9Vs_uTE7umpQsyq'
   }
 })
-  .then(data => data.json())
+  .then(toJson)
 
 
 export const searchArtists = (query) => 
