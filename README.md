@@ -3,6 +3,7 @@
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
 
 [![Build Status](https://travis-ci.org/Bilusca/spotify_wrapper.svg?branch=master)](https://travis-ci.org/Bilusca/spotify_wrapper)
+[![Coverage Status](https://coveralls.io/repos/github/Bilusca/spotify_wrapper/badge.svg?branch=master)](https://coveralls.io/github/Bilusca/spotify_wrapper?branch=master)
 
 ## Browser Support
 
