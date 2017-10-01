@@ -2,6 +2,8 @@
 
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
 
+[![Build Status](https://travis-ci.org/Bilusca/spotify_wrapper.svg?branch=master)](https://travis-ci.org/Bilusca/spotify_wrapper)
+
 ## Browser Support
 
 This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API is supported in the following browsers.
