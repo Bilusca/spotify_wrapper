@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Spotify Wrapper Test</title>
+  <meta charset="UTF-8">
+  <title>Spotify Wrapper Test</title>
 </head>
 <body>
-   
-    <script src="../dist/spotify-wrapper.umd.min.js"></script>
+
+    <div id="albums"></div>
+
+    <script src="../dist/spotify-wrapper.umd.js"></script>
+
+    <script>
+        console.log(SpotifyWrapper);
+        const spotify = new SpotifyWrapper({
+            token: 'BQA_vKSz5Djc3WMN3EjcJokCO-qDWDNv0N1w9QbuXwUhZ36xxLecNev-uR1yrxcA2wSvQ6hz5ZahjHYAbzLC0Ywmdfhhfe-lZfX5fa42lySpalAVaMhxPNPuL_CU3IPrtSovjwyjTsLUoPRv'
+        })
+
+        const albums = spotify.search.albums('Soundgarden');
+        const albumsEl = document.getElementById('albums');
+
+        albums
+            .then(data => {
+            markup = data.albums.items.map(item =>
+                `<img src='${item.images[0].url}' alt='${item.name}' />`
+            ).join('');
+
+            albumsEl.innerHTML = markup;
+            })
+    </script>
 </body>
 </html>

@@ -1,26 +1,12 @@
-import { API_URL } from './config';
-import { toJson } from './utils';
+function searcher(type, query) {
+  return this.request(`${this.apiURL}/search?q=${query}&type=${type}`);
+}
 
-export const search = (query, type) =>
-fetch(`${API_URL}/search?q=${query}&type=${type}`, {
-  method: 'get',
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Authorization': 'Bearer BQD3I9sabAfh7Q0PbxgsQmQKK9xem1KkPjwNeMtKD5vKJ4DQ6lla9dsgiCHsIKvSXFos8aDAp-F-ty-kXK5VX0rjLcZxIoZdSRxup_DT3VsYgMEdvCdFClslFsDcNVhwv9Vs_uTE7umpQsyq'
+export default function search() {
+  return {
+    artist: searcher.bind(this, 'artist'),
+    albums: searcher.bind(this, 'album'),
+    tracks: searcher.bind(this, 'track'),
+    playlists: searcher.bind(this, 'playlist')
   }
-})
-  .then(toJson)
-
-
-export const searchArtists = (query) => 
-  search(query, 'artist');
-
-export const searchAlbums = (query) => 
-  search(query, 'album');
-
-export const searchTracks = (query) => 
-  search(query, 'track');
-
-export const searchPlaylists = (query) => 
-  search(query, 'playlist');
+}
