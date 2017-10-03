@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["spotifyWrapper"] = factory();
+		exports["SpotifyWrapper"] = factory();
 	else
-		root["spotifyWrapper"] = factory();
+		root["SpotifyWrapper"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -130,7 +130,7 @@ var SpotifyWrapper = function () {
                 }
             };
 
-            return fetch(url, headers);
+            return fetch(url, headers).then(_utils2.default);
         }
     }]);
 
@@ -220,9 +220,10 @@ var HEADERS = exports.HEADERS = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var toJson = exports.toJson = function toJson(data) {
+var toJSON = function toJSON(data) {
   return data.json();
 };
+exports.default = toJSON;
 
 /***/ })
 /******/ ]);

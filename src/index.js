@@ -20,6 +20,6 @@ export default class SpotifyWrapper {
             }
         }
 
-        return fetch(url, headers);
+        return fetch(url, headers).then(toJSON);
     }
 }
